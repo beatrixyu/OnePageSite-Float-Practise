@@ -6,128 +6,135 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>One-page-site</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="./main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="" />
     <script src=""></script>
     <style>
-        /* 
-        header  */
+        /* header  */
         header {
             position: sticky;
             top: 0px;
-            background-color: rgb(143, 71, 150, 0.7);
-            width: 100%;
             display: inline-block;
-
+            width: 100%;
+            background-color: rgb(143, 71, 150, 0.7);
         }
 
         .logo {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 30%;
             float: left;
-            font-size: 15px;
-            font-weight: bolder;
             text-align: center;
             background-color: rgb(238, 224, 26);
-            margin-top: 10px;
-            margin-bottom: 10px;
-            margin-left: 10px;
+            margin: 10px;
             text-decoration: none;
-            box-shadow: 2px 2px 1px purple;
+            box-shadow: 2px 2px 1px rgb(70, 5, 70);
         }
 
         header nav {
-            top: 0px;
             float: right;
-            font-weight: bolder;
+            margin-top: 5px;
         }
 
         header nav ul li {
             display: inline;
-            text-align: end;
-            font-size: 25px;
+            margin-right: 55px;
+        }
+
+        header li a {
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: bolder;
             text-shadow: 1px 1px 1px rgb(20, 0, 0);
             color: rgb(233, 217, 2);
-            margin-right: 50px;
+        }
+
+        header li a:link {
             text-decoration: none;
         }
 
         /* main part */
         main {
-            display: inline-block;
             width: 100%;
         }
 
-        /* big pic */
-        .mainpicture {
-            float: left;
-            margin: 50px;
+        .mainPicture {
+            position: absolute;
+            top: 0;
+            z-index: -1;
         }
 
-        /* the main content */
+        main .emptyDiv {
+            float: left;
+            height: 800px;
+            width: 40%;
+            padding: 0px;
+        }
+
         main div {
-            line-height: 30px;
             float: right;
             width: 40%;
+            line-height: 30px;
             text-align: justify;
             padding-top: 150px;
-            padding-right: 150px;
+            padding-right: 100px;
         }
 
-        /* all big titles */
-        h1 {
+        .textTitle {
             clear: both;
             text-align: center;
         }
 
         /* aboutus part */
-        .aboutus {
+        .aboutUs {
+            width: 100%;
             margin-left: 100px;
         }
 
-        .aboutus figure {
+        .aboutUs figure {
+            display: inline-block;
             width: 400px;
             height: 700px;
-            display: inline-block;
             margin: 10px;
         }
 
-        .aboutus figcaption {
-            background-color: rgb(140, 115, 141);
-            height: 200px;
+        .aboutUs figcaption,
+        .aboutUs p {
+            background-color: rgb(140, 115, 141, 0.7);
+            height: 100px;
             margin: auto;
             text-align: center;
             font-size: 20px;
+            padding-top: 50px;
         }
 
         /* blog part */
         .blog {
-            margin-left: 150px;
+            width: 100%;
+            margin-left: 140px;
         }
 
         .blog img {
+            display: inline;
             margin: 20px;
-            width: 350px;
-            height: 350px;
         }
 
         /* contact part */
         .contact {
-            display: inline-block;
             width: 100%;
+            height: 200px;
         }
 
-        .contactdetail {
+        .contactDetail {
             float: left;
             margin-left: 200px;
         }
 
-        .contact .icon {
+        .contact .contactIcon {
             float: right;
             margin-right: 200px;
         }
 
-        .contact .icon img {
+        .contact .contactIcon img {
             margin: 10px;
         }
 
@@ -137,27 +144,27 @@
         }
 
         /* go up button */
-        .gotopbutton {
-            text-align: center;
-            margin: 20px;
-            text-decoration: none;
-            font-size: 20px;
-            font-weight: bolder;
-        }
-
-        .gotopbutton div {
-            background-color: rgb(233, 217, 2);
+        .goTopButton {
             position: fixed;
             z-index: 10;
-            top: 80%;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bolder;
+            background-color: yellow;
+            top: 85%;
             right: 10px;
             width: 120px;
-            height: 50px;
+            height: 30px;
             text-shadow: 1px 1px 1px white;
             box-shadow: 2px 2px 1px purple;
         }
 
-        .gotopbutton a:link {
+        .goTopButton a {
+            color: rgb(94, 15, 94);
+            text-shadow: 2px 2px 2px rgb(143, 109, 143);
+        }
+
+        .goTopButton a:link {
             text-decoration: none;
         }
 
@@ -168,15 +175,10 @@
             background-color: rgb(156, 94, 206, 0.7);
         }
 
-        footer .logo {
-            float: left;
-            padding: 10px;
-        }
-
         footer p {
             float: right;
-            margin-right: 10px;
-            font-size: 15px;
+            margin-right: 15px;
+            font-size: 17px;
         }
     </style>
 </head>
@@ -184,25 +186,27 @@
 <body>
 
     <!-- header part -->
-    <header id="top">
+    <header>
         <a class="logo" href="./index.html"> Logo </a>
 
         <nav>
             <ul>
-                <li href="index.html">Home</li>
-                <li href="aboutus.html">About Us</li>
-                <li href="blog.html">Blog</li>
-                <li href="contact.html">Contact</li>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./aboutus.html">About Us</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- big picture and main content -->
-    <main>
+    <main id="top">
 
-        <img class="mainpicture" src="https://source.unsplash.com/random/600x600">
+        <img class="mainPicture" src="https://source.unsplash.com/random/700x800">
+        <div class="emptyDiv"></div>
+
         <div>
-            <h1>Welcome to the Coding World</h1>
+            <h1 align="center">Welcome to the Coding World</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, voluptas qui blanditiis placeat, minus
                 unde dolore quas eligendi reiciendis, velit nemo totam provident. Hic temporibus qui ex omnis.
                 Reprehenderit natus asperiores placeat reiciendis veniam dicta excepturi atque dolores aut corrupti
@@ -210,73 +214,71 @@
         </div>
     </main>
 
-    <!-- aboutus part -->
-    <h1>About Us</h1>
+    <!-- aboutUs part -->
+    <h1 class="textTitle">About Us</h1>
 
-    <article class="aboutus">
+    <article class="aboutUs">
 
         <figure>
             <img src="https://source.unsplash.com/random/400x500">
+            <p>
+                This is the Information
+            </p>
+        </figure>
+        <figure>
+            <img src="https://source.unsplash.com/random/400x500">
             <figcaption>
-                This is the Infromation
+                This is the Information
+
             </figcaption>
         </figure>
         <figure>
             <img src="https://source.unsplash.com/random/400x500">
             <figcaption>
-                This is the Infromation
-            </figcaption>
-        </figure>
-        <figure>
-            <img src="https://source.unsplash.com/random/400x500">
-            <figcaption>
-                This is the Infromations
+                This is the Information
             </figcaption>
         </figure>
 
     </article>
 
     <!-- blog part -->
-    <h1>Blog</h1>
+    <h1 class="textTitle">Blog</h1>
 
-    <div class="blog">
-        <img src="https://source.unsplash.com/random/350x350">
-        <img src="https://source.unsplash.com/random/350x350">
-        <img src="https://source.unsplash.com/random/350x350">
-        <img src="https://source.unsplash.com/random/350x350">
-        <img src="https://source.unsplash.com/random/350x350">
-        <img src="https://source.unsplash.com/random/350x350">
-    </div>
+    <section class="blog">
+        <a href="https://www.unsplash.com"><img src="https://source.unsplash.com/random/350x350"> </a>
+        <a href="https://www.unsplash.com"><img src="https://source.unsplash.com/random/350x350"></a>
+        <a href="https://www.unsplash.com"><img src="https://source.unsplash.com/random/350x350"></a>
+        <a href="https://www.unsplash.com"> <img src="https://source.unsplash.com/random/350x350"></a>
+        <a href="https://www.unsplash.com"> <img src="https://source.unsplash.com/random/350x350"></a>
+        <a href="https://www.unsplash.com"> <img src="https://source.unsplash.com/random/350x350"></a>
+    </section>
 
     <!-- contact part -->
-    <h1>Contact</h1>
+    <h1 class="textTitle">Contact</h1>
 
-    <div class="contact">
-        <div class="contactdetail">
+    <section class="contact">
+        <div class="contactDetail">
             <h4><a href="mailto:beablome@gmail.com" class="email">Email: beablome@gmail.com</a></h4>
             <h4>Phone: (+47) 74456789</h4>
             <h4>Address: Oststraße 69, Düsseldorf</h4>
         </div>
 
         <!-- contact icon part -->
-        <div class="icon">
+        <div class="contactIcon">
             <div class="firsticon">
                 <a href="http://www.facebook.com"><img src="./image/facebook.png"></a>
                 <a href="http://www.instagram.com"><img src="./image/instagram.png"></a>
             </div>
             <div class="secondicon">
-                <a href="http://www.instagram.com"><img src="./image/icon_twitter.png"></a>
-                <a href="http://www.facebook.com"><img src="./image/youtube.png"></a>
+                <a href="http://www.twitter.com"><img src="./image/icon_twitter.png"></a>
+                <a href="http://www.youtube.com"><img src="./image/youtube.png"></a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="gotopbutton">
-        <div>
-            <a href="#top">Back to Top</a>
-        </div>
+    <div class="goTopButton">
+        <a href="#top">Back to Top</a>
     </div>
-
 
     <footer>
         <div><a class="logo" href="./index.html">Logo</a></div>
